@@ -10,7 +10,7 @@ import android.support.v4.app.Fragment;
 
 public class MainActivity extends AppCompatActivity{
 
-    //
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
