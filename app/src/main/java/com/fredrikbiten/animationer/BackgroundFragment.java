@@ -3,6 +3,7 @@ package com.fredrikbiten.animationer;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -22,6 +23,8 @@ public class BackgroundFragment extends Fragment {
     private static final long gameLength = 30000;
     private static final long countDownInterval = 1000;
 
+    private static Intent intent;
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
@@ -29,6 +32,7 @@ public class BackgroundFragment extends Fragment {
         scoreNumber = (TextView) view.findViewById(R.id.score_number);
         displayTimer = (TextView) view.findViewById(R.id.displayTimer);
         buttonsFragment = (ButtonsFragment) getFragmentManager().findFragmentById(R.id.fragment7);
+        intent = new Intent(view.getContext(), MainActivity.class);
 
         //Timer to display timeleft on gamescreen
         new CountDownTimer(gameLength, countDownInterval) {
@@ -43,6 +47,7 @@ public class BackgroundFragment extends Fragment {
             }
 
             public void onFinish() {
+
                 AlertDialog.Builder ab = new AlertDialog.Builder(getActivity());
                 ab.setCancelable(false);
                 ab.setTitle("Game Over");
@@ -56,7 +61,7 @@ public class BackgroundFragment extends Fragment {
                 ab.setPositiveButton("Restart", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        //Start a new round
+                        startActivity(intent);
 
                     }
                 });
