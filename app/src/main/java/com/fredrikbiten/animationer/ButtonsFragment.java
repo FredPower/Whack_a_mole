@@ -23,6 +23,7 @@ public class ButtonsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.buttons_fragment,container,false);
+
         button1 = (Button) view.findViewById(R.id.button1);
         button2 = (Button) view.findViewById(R.id.button2);
         button3 = (Button) view.findViewById(R.id.button3);
@@ -38,6 +39,7 @@ public class ButtonsFragment extends Fragment {
         backgroundFragment.updateScore(getScore());
         buttonClicks();
         setButtonColor(getRandomNr(),getCurrentNumber());
+
         return view;
     }
 

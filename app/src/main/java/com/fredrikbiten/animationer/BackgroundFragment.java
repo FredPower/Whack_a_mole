@@ -17,16 +17,21 @@ public class BackgroundFragment extends Fragment {
     private TextView scoreNumber;
     private TextView displayTimer;
     private int displayScore;
-    ButtonsFragment buttonsFragment;
+    private ButtonsFragment buttonsFragment;
+    //Length of a round in milliseconds
+    private static final long gameLength = 30000;
+    private static final long countDownInterval = 1000;
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.background_fragment,container,false);
         scoreNumber = (TextView) view.findViewById(R.id.score_number);
         displayTimer = (TextView) view.findViewById(R.id.displayTimer);
         buttonsFragment = (ButtonsFragment) getFragmentManager().findFragmentById(R.id.fragment7);
 
         //Timer to display timeleft on gamescreen
-        new CountDownTimer(30000, 1000) {
+        new CountDownTimer(gameLength, countDownInterval) {
 
             public void onTick(long millisUntilFinished) {
                 //Check how long we got left and change color on text
@@ -52,13 +57,13 @@ public class BackgroundFragment extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //Start a new round
+
                     }
                 });
                 ab.show();
             }
 
         }.start();
-
 
         return view;
     }
