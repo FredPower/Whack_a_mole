@@ -1,6 +1,8 @@
 package com.fredrikbiten.animationer;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -14,11 +16,15 @@ public class BackgroundFragment extends Fragment {
 
     private TextView scoreNumber;
     private TextView displayTimer;
+    private int displayScore;
+    ButtonsFragment buttonsFragment;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.background_fragment,container,false);
         scoreNumber = (TextView) view.findViewById(R.id.score_number);
         displayTimer = (TextView) view.findViewById(R.id.displayTimer);
+        buttonsFragment = (ButtonsFragment) getFragmentManager().findFragmentById(R.id.fragment7);
+
         //Timer to display timeleft on gamescreen
         new CountDownTimer(30000, 1000) {
 
@@ -32,7 +38,23 @@ public class BackgroundFragment extends Fragment {
             }
 
             public void onFinish() {
-
+                AlertDialog.Builder ab = new AlertDialog.Builder(getActivity());
+                ab.setCancelable(false);
+                ab.setTitle("Game Over");
+                ab.setMessage("Your score: " + getDisplayScore() + " Points");
+                ab.setNegativeButton("Menu", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Go back to menu
+                    }
+                });
+                ab.setPositiveButton("Restart", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Start a new round
+                    }
+                });
+                ab.show();
             }
 
         }.start();
@@ -42,5 +64,16 @@ public class BackgroundFragment extends Fragment {
     }
     public void updateScore(int score){
         scoreNumber.setText(Integer.toString(score));
+        setDisplayScore(score);
+
+    }
+
+
+    private void setDisplayScore(int displayScore) {
+        this.displayScore = displayScore;
+    }
+
+    private int getDisplayScore() {
+        return displayScore;
     }
 }
