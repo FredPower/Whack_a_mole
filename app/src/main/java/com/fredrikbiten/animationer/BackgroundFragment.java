@@ -23,17 +23,27 @@ public class BackgroundFragment extends Fragment {
     private static final long gameLength = 30000;
     private static final long countDownInterval = 1000;
 
+
     private static Intent intent;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.background_fragment,container,false);
+
         scoreNumber = (TextView) view.findViewById(R.id.score_number);
         displayTimer = (TextView) view.findViewById(R.id.displayTimer);
         buttonsFragment = (ButtonsFragment) getFragmentManager().findFragmentById(R.id.fragment7);
         intent = new Intent(view.getContext(), MainActivity.class);
 
+        //startGameTimer();
+
+
+
+        return view;
+    }
+
+    public void startGameTimer() {
         //Timer to display timeleft on gamescreen
         new CountDownTimer(gameLength, countDownInterval) {
 
@@ -47,7 +57,6 @@ public class BackgroundFragment extends Fragment {
             }
 
             public void onFinish() {
-
                 AlertDialog.Builder ab = new AlertDialog.Builder(getActivity());
                 ab.setCancelable(false);
                 ab.setTitle("Game Over");
@@ -69,8 +78,6 @@ public class BackgroundFragment extends Fragment {
             }
 
         }.start();
-
-        return view;
     }
     public void updateScore(int score){
         scoreNumber.setText(Integer.toString(score));
@@ -86,4 +93,6 @@ public class BackgroundFragment extends Fragment {
     private int getDisplayScore() {
         return displayScore;
     }
+
+
 }

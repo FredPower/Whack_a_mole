@@ -17,6 +17,7 @@ public class ButtonsFragment extends Fragment {
     private int currentNumber;
     private int score;
     private BackgroundFragment backgroundFragment;
+
    // private TextView scoreNumber;
 
 
@@ -37,8 +38,10 @@ public class ButtonsFragment extends Fragment {
         setCurrentNumber(0);
         setScore(0);
         backgroundFragment.updateScore(getScore());
-        buttonClicks();
-        setButtonColor(getRandomNr(),getCurrentNumber());
+
+        //buttonClicks();
+        //setButtonColor(getRandomNr(), getCurrentNumber());
+
 
         return view;
     }
@@ -111,7 +114,7 @@ public class ButtonsFragment extends Fragment {
     }
 
 
-    private void buttonClicks() {
+    public void buttonClicks() {
         button1.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -270,7 +273,7 @@ public class ButtonsFragment extends Fragment {
     }
 
 
-    private int getRandomNr() {
+    public int getRandomNr() {
         Random random = new Random();
         int n = random.nextInt(9) + 1;
         if(n==getCurrentNumber()){
@@ -294,4 +297,6 @@ public class ButtonsFragment extends Fragment {
     public void setScore(int score) {
         this.score = score;
     }
+
+
 }
