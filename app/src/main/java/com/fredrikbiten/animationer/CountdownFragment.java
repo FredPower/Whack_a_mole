@@ -13,11 +13,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class CountdownFragment extends Fragment {
-    private static long timerLength = 3000;
+    private static long timerLength = 4000;
     private static long timerInterval = 1000;
     private TextView countdownTimer;
-    ButtonsFragment buttonsFragment;
-    BackgroundFragment backgroundFragment;
+    private ButtonsFragment buttonsFragment;
+    private BackgroundFragment backgroundFragment;
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.countdown_fragment, container, false);

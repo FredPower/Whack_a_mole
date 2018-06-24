@@ -29,16 +29,12 @@ public class BackgroundFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.background_fragment,container,false);
+        View view = inflater.inflate(R.layout.background_fragment, container, false);
 
         scoreNumber = (TextView) view.findViewById(R.id.score_number);
         displayTimer = (TextView) view.findViewById(R.id.displayTimer);
         buttonsFragment = (ButtonsFragment) getFragmentManager().findFragmentById(R.id.fragment7);
         intent = new Intent(view.getContext(), MainActivity.class);
-
-        //startGameTimer();
-
-
 
         return view;
     }
@@ -51,7 +47,8 @@ public class BackgroundFragment extends Fragment {
                 //Check how long we got left and change color on text
                 if ((millisUntilFinished / 1000) < 15 && (millisUntilFinished / 1000) > 5)
                     displayTimer.setTextColor(Color.YELLOW);
-                if ((millisUntilFinished / 1000) <= 5) displayTimer.setTextColor(Color.RED);
+                if ((millisUntilFinished / 1000) <= 5)
+                    displayTimer.setTextColor(Color.RED);
                 displayTimer.setText(Long.toString(millisUntilFinished / 1000));
 
             }
@@ -64,7 +61,8 @@ public class BackgroundFragment extends Fragment {
                 ab.setNegativeButton("Menu", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        //Go back to menu
+                        Intent menu = new Intent(getView().getContext(), MenuScreen.class);
+                        startActivity(menu);
                     }
                 });
                 ab.setPositiveButton("Restart", new DialogInterface.OnClickListener() {
@@ -79,7 +77,8 @@ public class BackgroundFragment extends Fragment {
 
         }.start();
     }
-    public void updateScore(int score){
+
+    public void updateScore(int score) {
         scoreNumber.setText(Integer.toString(score));
         setDisplayScore(score);
 

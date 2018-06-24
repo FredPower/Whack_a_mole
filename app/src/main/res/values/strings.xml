@@ -3,4 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="Score_number"></string>
     <string name="score_title">SCORE</string>
+    <string name="title_activity_main_menu_screen">MainMenuScreen</string>
+    <string name="title_activity_menu_screen">MenuScreen</string>
+    <string name="tap_screen_to_start">Tap screen to start</string>
 </resources>
