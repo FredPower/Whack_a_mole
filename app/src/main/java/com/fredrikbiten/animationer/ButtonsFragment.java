@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ public class ButtonsFragment extends Fragment {
     private int currentNumber;
     private int score;
     private BackgroundFragment backgroundFragment;
+    private int color ;
 
    // private TextView scoreNumber;
 
@@ -24,7 +26,7 @@ public class ButtonsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.buttons_fragment,container,false);
-
+        color = Color.rgb(152,199,94);
         button1 = (Button) view.findViewById(R.id.button1);
         button2 = (Button) view.findViewById(R.id.button2);
         button3 = (Button) view.findViewById(R.id.button3);
@@ -50,61 +52,78 @@ public class ButtonsFragment extends Fragment {
        // thread.interrupt();
         switch (newnumber) {
             case 1:
-                button1.setBackgroundColor(Color.GREEN);
+                button1.setBackground(ContextCompat.getDrawable(getContext(),R.drawable.whackamole2));
+                //button1.setBackgroundColor(Color.GREEN);
                 break;
             case 2:
-                button2.setBackgroundColor(Color.GREEN);
+                button2.setBackground(ContextCompat.getDrawable(getContext(),R.drawable.whackamole2));
+
+                //button2.setBackgroundColor(Color.GREEN);
                 break;
             case 3:
-                button3.setBackgroundColor(Color.GREEN);
+                button3.setBackground(ContextCompat.getDrawable(getContext(),R.drawable.whackamole2));
+
+                //button3.setBackgroundColor(Color.GREEN);
                 break;
             case 4:
-                button4.setBackgroundColor(Color.GREEN);
+                button4.setBackground(ContextCompat.getDrawable(getContext(),R.drawable.whackamole2));
+
+                //button4.setBackgroundColor(Color.GREEN);
                 break;
             case 5:
-                button5.setBackgroundColor(Color.GREEN);
+                button5.setBackground(ContextCompat.getDrawable(getContext(),R.drawable.whackamole2));
+
+                //button5.setBackgroundColor(Color.GREEN);
                 break;
             case 6:
-                button6.setBackgroundColor(Color.GREEN);
+                button6.setBackground(ContextCompat.getDrawable(getContext(),R.drawable.whackamole2));
+
+                //button6.setBackgroundColor(Color.GREEN);
                 break;
             case 7:
-                button7.setBackgroundColor(Color.GREEN);
+                button7.setBackground(ContextCompat.getDrawable(getContext(),R.drawable.whackamole2));
+
+                //button7.setBackgroundColor(Color.GREEN);
                 break;
             case 8:
-                button8.setBackgroundColor(Color.GREEN);
+                button8.setBackground(ContextCompat.getDrawable(getContext(),R.drawable.whackamole2));
+
+                //button8.setBackgroundColor(Color.GREEN);
                 break;
             case 9:
-                button9.setBackgroundColor(Color.GREEN);
+                button9.setBackground(ContextCompat.getDrawable(getContext(),R.drawable.whackamole2));
+
+               // button9.setBackgroundColor(Color.GREEN);
                 break;
             default:
         }
         switch (current) {
             case 1:
-                button1.setBackgroundColor(Color.BLACK);
+                button1.setBackgroundColor(color);
                 break;
             case 2:
-                button2.setBackgroundColor(Color.BLACK);
+                button2.setBackgroundColor(color);
                 break;
             case 3:
-                button3.setBackgroundColor(Color.BLACK);
+                button3.setBackgroundColor(color);
                 break;
             case 4:
-                button4.setBackgroundColor(Color.BLACK);
+                button4.setBackgroundColor(color);
                 break;
             case 5:
-                button5.setBackgroundColor(Color.BLACK);
+                button5.setBackgroundColor(color);
                 break;
             case 6:
-                button6.setBackgroundColor(Color.BLACK);
+                button6.setBackgroundColor(color);
                 break;
             case 7:
-                button7.setBackgroundColor(Color.BLACK);
+                button7.setBackgroundColor(color);
                 break;
             case 8:
-                button8.setBackgroundColor(Color.BLACK);
+                button8.setBackgroundColor(color);
                 break;
             case 9:
-                button9.setBackgroundColor(Color.BLACK);
+                button9.setBackgroundColor(color);
                 break;
             default:
         }
