@@ -11,8 +11,9 @@ import android.widget.TextView;
 
 import static java.lang.Thread.sleep;
 
-public class MenuScreen extends Activity implements GestureDetector.OnDoubleTapListener, GestureDetector.OnGestureListener {
+public class MenuScreen extends Activity implements GestureDetector.OnDoubleTapListener, GestureDetector.OnGestureListener{
     GestureDetector gestureDetector;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,6 @@ public class MenuScreen extends Activity implements GestureDetector.OnDoubleTapL
 
 
     }
-
 
     @Override
     public boolean onSingleTapConfirmed(MotionEvent e) {

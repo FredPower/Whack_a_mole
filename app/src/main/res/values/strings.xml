@@ -6,4 +6,5 @@
     <string name="title_activity_main_menu_screen">MainMenuScreen</string>
     <string name="title_activity_menu_screen">MenuScreen</string>
     <string name="tap_screen_to_start">Tap screen to start</string>
+    <string name="game_title">Whack-Dem-Moles</string>
 </resources>
