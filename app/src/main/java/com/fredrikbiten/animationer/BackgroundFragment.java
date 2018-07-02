@@ -8,12 +8,14 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class BackgroundFragment extends Fragment {
+public class BackgroundFragment extends Fragment{
 
     private TextView scoreNumber;
     private TextView displayTimer;
@@ -35,6 +37,8 @@ public class BackgroundFragment extends Fragment {
         displayTimer = (TextView) view.findViewById(R.id.displayTimer);
         buttonsFragment = (ButtonsFragment) getFragmentManager().findFragmentById(R.id.fragment7);
         intent = new Intent(view.getContext(), MainActivity.class);
+
+
 
         return view;
     }
@@ -92,6 +96,7 @@ public class BackgroundFragment extends Fragment {
     private int getDisplayScore() {
         return displayScore;
     }
+
 
 
 }

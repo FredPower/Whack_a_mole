@@ -33,11 +33,17 @@ public class CountdownFragment extends Fragment {
 
             public void onTick(long millisUntilFinished) {
                 //Check how long we got left and change color on text
-                if ((millisUntilFinished / 1000) < 2 && (millisUntilFinished / 1000) > 0)
+
+                if ((millisUntilFinished / 1000) < 2 && (millisUntilFinished / 1000) > 0) {
                     countdownTimer.setTextColor(Color.YELLOW);
-                if ((millisUntilFinished / 1000) <= 0)
-                    countdownTimer.setTextColor(Color.GREEN);
+
+                }
                 countdownTimer.setText(Long.toString(millisUntilFinished / 1000));
+                if ((millisUntilFinished / 1000) <= 0) {
+                    countdownTimer.setText("GO");
+                    countdownTimer.setTextColor(Color.GREEN);
+                }
+
             }
 
             public void onFinish() {

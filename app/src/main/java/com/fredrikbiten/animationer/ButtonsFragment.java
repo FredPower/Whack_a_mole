@@ -26,12 +26,16 @@ public class ButtonsFragment extends Fragment {
     //Handling sounds
     private SoundPool soundPool;
     private int soundHit,soundMiss;
+    //background color
+    private static final int red = 152;
+    private static final int green = 199;
+    private static final int blue = 94;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.buttons_fragment, container, false);
-        color = Color.rgb(152, 199, 94);
+        color = Color.rgb(red, green, blue);
         button1 = (Button) view.findViewById(R.id.button1);
         button2 = (Button) view.findViewById(R.id.button2);
         button3 = (Button) view.findViewById(R.id.button3);

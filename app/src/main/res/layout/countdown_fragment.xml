@@ -13,7 +13,7 @@
         android:fontFamily="@font/orbitron"
         android:text="3"
         android:textColor="@android:color/holo_red_dark"
-        android:textSize="350sp"
+        android:textSize="200sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
